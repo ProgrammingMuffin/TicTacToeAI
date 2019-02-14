@@ -52,46 +52,7 @@ function Make2()
 	end
 end
 
-function Posswin(p)
-	local prod, val, res;
-	val = p * p * 2;
-	for i=1, 3 do
-		prod = 1;
-		for j=i, i+2 do
-			prod = prod * Board[j];
-			if Board[j] == 2 then
-				res = j;
-			end
-		end
-		if prod == val then
-			return res;
-		end
-		prod = 1;
-		res = 0;
-		for j=i, i+6, 3 do
-			prod = prod * Board[j];
-			if Board[j] == 2 then
-				res = j;
-			end
-		end	
-		if i == 1 then
-			for j=i, i+8, 4 do
-				prod = prod * Board[j];
-				if Board[j] == 2 then
-					res = j;
-				end
-			end
-		elseif i == 3 then
-			for j=i, i+4, 2 do
-				prod = prod * Board[j];
-				if Board[j] == 2 then
-					res = j;
-				end
-			end
-		end
-		if prod == val then
-			return res;
-		end
+
 	end
 	return 0;
 end
